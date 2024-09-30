@@ -7,13 +7,13 @@ Code and data for Population Genomic Studies of Fusarium graminearum
 awk 'BEGIN {OFS=" "} 
 {
     if ($1 ~ /sites/) {
-        for (i=2; i<=22; i++) {
-            printf "%s%s", $i, (i < 22 ? OFS : "\n")
+        for (i=2; i<=NF; i++) {
+            printf "%s%s", $i, (i <= NF ? OFS : "\n")
         }
     } else {
         printf "%s ", $3;  # Print the third field followed by a space
-        for (j=1; j<=20; j++) {
-            printf "%s%s", substr($4, j, 1), (j < 20 ? OFS : "\n")
+        for (j=1; j<=NF; j++) {
+            printf "%s%s", substr($4, j, 1), (j <= NF ? OFS : "\n")
         }
     }
 }' FgramHaplotypes.complete.txt > sequences.txt
