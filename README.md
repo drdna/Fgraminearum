@@ -2,19 +2,7 @@
 Code and data for Population Genomic Studies of Fusarium graminearum
 
 ## Determining Allele Frequencies of SNPs within _F. graminearum_ population
-1. Read haplotypes file and format SNPs into columns:
+1. Use [FgramAlleleFreqs.pl](/scripts/FgramAlleleFreqs.pl) script to genetrate a table of allele frequency counts from the FgramHaplotypes.comple.txt file:
 ```bash
-awk 'BEGIN {OFS=" "} 
-{
-    if ($1 ~ /sites/) {
-        for (i=2; i<=NF; i++) {
-            printf "%s%s", $i, (i <= NF ? OFS : "\n")
-        }
-    } else {
-        printf "%s ", $3;  # Print the third field followed by a space
-        for (j=1; j<=NF; j++) {
-            printf "%s%s", substr($4, j, 1), (j <= NF ? OFS : "\n")
-        }
-    }
-}' FgramHaplotypes.complete.txt > sequences.txt
+perl FgramAlleleFreqs.pl FgramHaplotypes.complete.txt > FgramAlleleFreqs.txt
 ```
