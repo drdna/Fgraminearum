@@ -6,10 +6,10 @@ Code and data for Population Genomic Studies of _Fusarium graminearum_
 ```bash
 perl FgramAlleleFreqs.pl FgramHaplotypes.complete.txt > FgramAlleleFreqs.txt
 ```
-## Identify genomic regions that contain multiple SNPs within a 60 nt target region
+## Identify genomic regions that contain multiple SNPs within a 50 nt target region
 Read Allele Frequencies file to identify blocks of SNPs
 ```bash
-perl ClusteredMonsterplexSNPsNewFormat.pl FgramAlleleFreqs.txt > ClusteredHiFreqSNPs.txt
+perl ClusteredMonsterplexSNPsNewFormat.pl FgramAlleleFreqs.txt 50 > ClusteredHiFreqSNPs.txt
 ```
 ## BLAST all F. gram genomes against the PH1 reference:
 ```bash
