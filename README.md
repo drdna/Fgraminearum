@@ -19,7 +19,7 @@ for f in `ls *nh.fasta`; do blastn -query PH1ref.fasta -subject $f -evalue 1e-20
 ```
 ## Identify genomic regions that are invariant across all genomes in a given list of strains
 ```bash
-perl PerfectAlignments.pl PH1Ref.fasta NA1NA2NA3Strains.txt FgramBLAST > FgramInvariant.txt
+perl PerfectAlignments.pl PH1Ref.fasta FgramNAstrains.txt FgramBLAST > FgramInvariant.txt
 ```
 ## Print out candidate MonsterPlex loci
 ```bash
