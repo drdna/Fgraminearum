@@ -6,11 +6,6 @@ Code and data for Population Genomic Studies of _Fusarium graminearum_
 ```bash
 perl FgramAlleleFreqs.pl FgramHaplotypes.complete.txt > FgramAlleleFreqs.txt
 ```
-## Identify genomic regions that contain multiple SNPs within a 50 nt target region
-Read Allele Frequencies file to identify blocks of SNPs
-```bash
-perl ClusteredMonsterplexSNPsNewFormat.pl FgramAlleleFreqs.txt 50 > ClusteredHiFreqSNPs.txt
-```
 ## BLAST all F. gram genomes against the PH1 reference:
 ```bash
 mkdir FgramBLAST
@@ -21,8 +16,13 @@ for f in `ls *nh.fasta`; do blastn -query PH1ref.fasta -subject $f -evalue 1e-20
 ```bash
 perl PerfectAlignments.pl PH1Ref.fasta FgramNAstrains.txt NewFgramBLAST > FgramInvariant.txt
 ```
-## Print out candidate MonsterPlex loci
+## Identify high frequency variants that are flanked by invariant priming sites
+Grab mutliple 91 nt windows that flank each hi-freq SNP site (41 nt central region containing the variant and 25 nt on each end for potential primer annealing sits). Slide windows across the locus so that variant site is always >= 35 nt from window/start end.
 ```bash
-perl SelectMonsterplexTargetLoci.pl FgramInvariant.txt FgramAlleleFreqs.txt ClusteredHiFreqSNPs.txt 50 > FgramMPlexTargets.fasta
+perl SelectMonsterplexTargetLoci.pl FgramInvariant.txt FgramAlleleFreqs.txt ClusteredHiFreqSNPs.txt 50 > MPlex_target_candidates.txt
 ```
-## 
+## Use primer3 to pick primers (57 < Tm < 60; fragment size range 81-91 bp)
+```bash
+awk '{print "SEQUENCE_ID=" $1 "\nSEQUENCE_TEMPLATE=" $2 "\nPRIMER_MIN_TM=57\nPRIMER_MAX_TM=60\nPRIMER_PRODUCT_SIZE=81-91\nPRIMER_NUM_RETURN=1\n="}' MPlex_target_candidates.txt > primer3_in.txt
+primer3_core primer3_in.txt > primer3_primer_suggestions.txt
+```
