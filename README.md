@@ -26,3 +26,11 @@ perl SelectMonsterplexTargetLoci.pl FgramInvariant.txt FgramAlleleFreqs.txt Clus
 awk '{print "SEQUENCE_ID=" $1 "\nSEQUENCE_TEMPLATE=" $2 "\nPRIMER_MIN_TM=57\nPRIMER_MAX_TM=60\nPRIMER_PRODUCT_SIZE=81-91\nPRIMER_NUM_RETURN=1\n="}' MPlex_target_candidates.txt > primer3_in.txt
 primer3_core primer3_in.txt > primer3_primer_suggestions.txt
 ```
+## Select primers based on the sequences most frequently picked by primer3
+```bash
+perl PickMPlexPrimers.pl primer3_primer_suggestions.txt > Picked_primers.txt
+```
+## Plot primer distribution
+Use [PlotPrimerSites.R](/scripts/PlotPrimerSites.R) script to plot primer sites on chromosomes.
+
+![MonsterPlexTargets.png](/data/MonsterPlexTargets.png)
