@@ -17,7 +17,7 @@ for f in `ls *nh.fasta`; do blastn -query PH1ref.fasta -subject $f -evalue 1e-20
 perl PerfectAlignments.pl PH1Ref.fasta FgramNAstrains.txt NewFgramBLAST > FgramInvariant.txt
 ```
 ## Identify high frequency variants that are flanked by invariant priming sites
-Grab mutliple 91 nt windows that flank each hi-freq SNP site (41 nt central region containing the variant and 25 nt on each end for potential primer annealing sits). Slide windows across the locus so that variant site is always >= 35 nt from window/start end.
+Grab multiple 91 nt windows that flank each hi-freq SNP site (41 nt central region containing the variant and 25 nt on each end for potential primer annealing sits). Slide windows across the locus so that variant site is always >= 35 nt from window/start end.
 ```bash
 perl SelectMonsterplexTargetLoci.pl FgramInvariant.txt FgramAlleleFreqs.txt ClusteredHiFreqSNPs.txt 50 > MPlex_target_candidates.txt
 ```
