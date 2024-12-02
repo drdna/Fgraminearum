@@ -30,6 +30,8 @@ primer3_core primer3_in.txt > primer3_primer_suggestions.txt
 ```bash
 perl PickMPlexPrimers.pl primer3_primer_suggestions.txt > Picked_primers.txt
 ```
+Resulting file can be accessed here: [Picked_primers.txt](/data/Picked_primers.txt)
+
 ## Plot primer distribution
 Use [PlotPrimerSites.R](/scripts/PlotPrimerSites.R) script to plot primer sites on chromosomes.
 
