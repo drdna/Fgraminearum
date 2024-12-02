@@ -34,3 +34,14 @@ perl PickMPlexPrimers.pl primer3_primer_suggestions.txt > Picked_primers.txt
 Use [PlotPrimerSites.R](/scripts/PlotPrimerSites.R) script to plot primer sites on chromosomes.
 
 ![MonsterPlexTargets.png](/data/MonsterPlexTargets.png)
+
+## Develop MonsterPlex Primers for current multi-locus genotyping markers:
+1. Blast existing markers against the NA1, NA2 and N3 population members:
+```bash
+for f in `ls MLG_FASTA/*fasta`; do while read col1 col2 col3; do blastn -query $f -subject Documents/FGRAM/FgramFasta/${col1}_nh_masked.fasta -outfmt '6 qseqid sseqid qlen qstart qend sstart send btop' | awk '$5 - $4 == $3 - 1 {print $1, $8}'; done < FgramNAstrains.txt; done > MLGallelesAll.txt
+```
+2. Use [SortMLGAlleles.pl](/scripts/SortMLGAlleles.pl) script to determine frequency of each allelic variant:
+```bash
+perl SortMLGAlleles.pl MLGallelesAll.txt > MLGalleleCounts.txt
+```
+3. Design primers to amplify the most frequent polymorphic sites (target = two per locus) 
