@@ -47,4 +47,5 @@ for f in `ls MLG_FASTA/*fasta`; do while read col1 col2 col3; do blastn -query $
 perl SortMLGAlleles.pl MLGallelesAll.txt  | sort -k1,1 -k3n > MLGalleleCounts.txt
 ```
 Resulting file can be accessed at [MLGalleleCounts.txt](/data/MLGalleleCounts.txt)
+
 3. Design primers to amplify the most frequent polymorphic sites (target = two per locus) 
