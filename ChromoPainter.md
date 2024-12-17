@@ -18,3 +18,5 @@ mkdir FgramCopyProbs
 mv *copyprobsperlocus.out.gz FgramCopyProbs
 ```
 6. Plot foreign introgressions using the [ForeignIntrogressions.R](/scripts/ForeignIntrogressions.R) script:
+
+![FgramCPplotsOrig.png](/data/FgramCPplotsOrig.png)
