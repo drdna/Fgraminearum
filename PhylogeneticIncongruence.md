@@ -23,7 +23,7 @@ python PlotTanglegramsNew.py MCCT/
 6. This produced the following tanglegram:
 ![HS-tanglegram-ML-trees.png](/data/HS-tanglegram-ML-trees.png)
 
-### The first tree is the reference tree which is used to establish the color scheme for the NA1, NA2, NA3 groupings. Hote the extensive and cross-population haplotype sharing between _F. gerlachii_, NA1, NA2 and NA3.
+### The first tree is the reference tree which is used to establish the color scheme for the NA1, NA2, NA3 groupings. Note the extensive and cross-population haplotype sharing between _F. gerlachii_, NA1, NA2 and NA3.
 
 ## Lo-speed region:
 1. Retrieve haplotype data for consecutive segments starting at variant position 21,000 from the start of Chromosome 3. Note: we have to use a larger variant window (2,000 sites) because the NA1,NA2 and NA3 populations have lower SNP density in this region. 
