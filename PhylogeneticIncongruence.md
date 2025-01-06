@@ -21,7 +21,7 @@ mv RAxML_bestree.FgramChr3_27000-32000 MCCT/MCCT0.tre
 python PlotTanglegramsNew.py MCCT/
 ```
 6. This produced the following tanglegram:
-![tanglegram-ML-trees.png](/data/tanglegram-ML-trees.png)
+![HS-tanglegram-ML-trees.png](/data/HS-tanglegram-ML-trees.png)
 
 ## Lo-speed region:
 1. Retrieve haplotype data for consecutive segments starting at variant position 21,000 from the start of Chromosome 3. Note: we have to use a larger variant window (2,000) because the NA1,NA2 and NA3 populations have lower SNP density in this region. 
@@ -41,4 +41,4 @@ a=0; for f in $(seq 21000 2000 5000); do g=$(($f+2000)); a=$((a+=1)); cp RAxML_b
 python PlotTanglegramsNew.py MCCT/
 ```
 5. This produced the following tanglegram:
-![tanglegram-ML-trees.png](/data/tanglegram-ML-trees.png)
+![LS-tanglegram-ML-trees.png](/data/LS-tanglegram-ML-trees.png)
