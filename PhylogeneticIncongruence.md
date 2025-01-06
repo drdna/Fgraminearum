@@ -1,4 +1,4 @@
-# Analysis of Phylogenetic Congrence in representative Hi-speed versus Lo-speed Genome Regions
+# Analysis of Phylogenetic Congrence in Representative Hi-speed versus Lo-speed Genome Regions
 ## Hi-speed region
 1. Retrieve haplotype data for consecutive segments at the start of Chromosome 3:
 ```bash
