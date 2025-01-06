@@ -43,4 +43,4 @@ python PlotTanglegramsNew.py MCCT/
 5. This produced the following tanglegram:
 ![LS-tanglegram-ML-trees.png](/data/LS-tanglegram-ML-trees.png)
 
-### Note how the hi-speed regions fail to resolve the NA1, NA2, NA3, _F. gerlachii_ groupings and, furthermore, show extensive haplotype sharing between all groups. The NA1 group shows a number of splits because it is an admixed population, whose donor lineages show variable distance from NA2 and NA3.
+### Note how the hi-speed regions fail to resolve the NA1, NA2, NA3, _F. gerlachii_ groupings and, furthermore, show extensive haplotype sharing between all groups. The NA1 group shows a number of splits because it is an admixed population, whose donor lineages show variable distance from NA2 and NA3. Otherise, NA1, NA2 and NA3 group members consiustently cluster together.
