@@ -42,3 +42,5 @@ python PlotTanglegramsNew.py MCCT/
 ```
 5. This produced the following tanglegram:
 ![LS-tanglegram-ML-trees.png](/data/LS-tanglegram-ML-trees.png)
+
+### Note how the hi-speed regions fail to resolve the NA1, NA2, NA3, F. gerlachii groupings and, furthermore, show extensive haplotype sharing between all groups.
