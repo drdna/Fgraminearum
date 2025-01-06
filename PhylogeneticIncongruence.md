@@ -24,7 +24,7 @@ python PlotTanglegramsNew.py MCCT/
 ![HS-tanglegram-ML-trees.png](/data/HS-tanglegram-ML-trees.png)
 
 ## Lo-speed region:
-1. Retrieve haplotype data for consecutive segments starting at variant position 21,000 from the start of Chromosome 3. Note: we have to use a larger variant window (2,000) because the NA1,NA2 and NA3 populations have lower SNP density in this region. 
+1. Retrieve haplotype data for consecutive segments starting at variant position 21,000 from the start of Chromosome 3. Note: we have to use a larger variant window (2,000 sites) because the NA1,NA2 and NA3 populations have lower SNP density in this region. 
 ```bash
 for f in $(seq 21000 2000 61000); do g=$(($f+2000)); awk -v var=$f '$3 == "sequence3" {print ">" $2 "_" $1 "\n" substr($4, var, 2000)}' FgWardPlusHaplotypes.complete.txt | grep -f NA1NA2NA3strains.txt -A 1 | grep -v ^- > FgramChr3_${f}-${g}.fasta; done
 ```
