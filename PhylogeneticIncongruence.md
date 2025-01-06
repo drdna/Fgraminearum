@@ -20,5 +20,5 @@ mv RAxML_bestree.FgramChr3_27000-32000 MCCT/MCCT0.tre
 python PlotTanglegramsNew.py MCCT/
 ```
 6. This produced the following tanglegram:
-![tanglegram-ML-trees.pdf](/data/tanglegram-ML-trees.pdf)
+![tanglegram-ML-trees.png](/data/tanglegram-ML-trees.png)
 
