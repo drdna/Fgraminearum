@@ -12,7 +12,7 @@ for f in $(seq 1 250 5000); do g=$(($f+250)); /Applications/standard-RAxML-maste
 ```bash
 a=0; for f in $(seq 1 250 5000); do g=$(($f+250)); a=$((a+=1)); cp RAxML_bestTree.FgramChr3_${f}-${g} MCCT/MCCT${a}.tre; done
 ```
-4. Add a reference tree in which F. gerlachii, NA1, NA2 and NA3 form discrete clusters:
+4. Add a reference tree in which _F. gerlachii_, NA1, NA2 and NA3 form discrete clusters:
 ```bash
 mv RAxML_bestree.FgramChr3_27000-32000 MCCT/MCCT0.tre
 ```
