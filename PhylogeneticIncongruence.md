@@ -30,7 +30,7 @@ for f in $(seq 21000 2000 61000); do g=$(($f+2000)); awk -v var=$f '$3 == "seque
 ```
 2. Build Trees for the each of the selected regions:
 ```bash
-for f in $(seq 21000 2000 61000); do g=$(($f+2000)); /Applications/standard-RAxML-master/raxmlHPC-SSE3 -m BINGAMMA -n FgramChr3_${f}-${g} -s FgramChr3_${f}-${g}.fasta -p 1234 -f a -x 4321 -# 100
+for f in $(seq 21000 2000 61000); do g=$(($f+2000)); /Applications/standard-RAxML-master/raxmlHPC-SSE3 -m BINGAMMA -n FgramChr3_${f}-${g} -s FgramChr3_${f}-${g}.fasta -o Fger_38380,Fger_36905 -p 1234 -f a -x 4321 -# 100
 ```
 3. Modify tree filenames for importation into PlotTanglegrams.py script:
 ```bash
