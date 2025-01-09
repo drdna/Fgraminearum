@@ -4,7 +4,7 @@
 ```bash
 for f in $(seq 1 250 5000); do g=$(($f+250)); awk -v var=$f '$3 == "sequence3" {print ">" $2 "_" $1 "\n" substr($4, var, 250)}' FgWardPlusHaplotypes.complete.txt | grep -f NA1NA2NA3strains.txt -A 1 | grep -v ^- > FgramChr3_${f}-${g}.fasta; done
 ```
-2. Build Trees for the each of the selected regions:
+2. Build Trees for the each of the selected regions, rooted on _F. gerlachii_:
 ```bash
 for f in $(seq 1 250 5000); do g=$(($f+250)); /Applications/standard-RAxML-master/raxmlHPC-SSE3 -m BINGAMMA -n FgramChr3_${f}-${g} -s FgramChr3_${f}-${g}.fasta -p 1234 -f a -x 4321 -# 100
 ```
