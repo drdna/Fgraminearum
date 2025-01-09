@@ -21,7 +21,7 @@ mv RAxML_bestree.FgramChr3_27000-32000 MCCT/MCCT0.tre
 python PlotTanglegramsNew.py MCCT/
 ```
 6. This produced the following tanglegram:
-![HD_tanglegram-ML-trees.png](/data/HD_tanglegram-ML-trees.png)
+![HD_tanglegram-test.png](/data/HD_tanglegram-test.png)
 
 ### The first tree is the reference tree which is used to establish the color scheme for the NA1, NA2, NA3 groupings. Note the extensive and cross-population haplotype sharing between _F. gerlachii_, NA1, NA2 and NA3.
 
@@ -43,6 +43,6 @@ a=0; for f in $(seq 21000 2000 5000); do g=$(($f+2000)); a=$((a+=1)); cp RAxML_b
 python PlotTanglegramsNew.py MCCT/
 ```
 5. This produced the following tanglegram:
-![LD_tanglegram-ML-trees.png](/data/LD_tanglegram-ML-trees.png)
+![LD_tanglegram-test.png](/data/LD_tanglegram-test.png)
 
 ### Note how the hi-speed regions fail to resolve the NA1, NA2, NA3, _F. gerlachii_ groupings and, furthermore, show extensive haplotype sharing between all groups. The NA1 group shows a number of splits within the "lo-speed" tanglegram because it is an admixed population, whose donor lineages show variable distance from NA2 and NA3. Otherise, NA1, NA2 and NA3 group members consiustently cluster together.
