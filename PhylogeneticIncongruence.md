@@ -23,7 +23,7 @@ python PlotTanglegramsNew.py MCCT/
 6. This produced the following tanglegram:
 ![HD_tanglegram-test.png](/data/HD_tanglegram-test.png)
 
-### The first tree is the reference tree which is used to establish the color scheme for the NA1, NA2, NA3 groupings. Note the extensive and cross-population haplotype sharing between _F. gerlachii_, NA1, NA2 and NA3.
+### The first tree is the reference tree which is used to show the consensus grouping for _F. gerlachii_ NA1, NA2 and NA3. Note the extensive and cross-population haplotype sharing between _F. gerlachii_, NA1, NA2 and NA3 as indicated by trees 2 through 20.
 
 ## Lo-speed region:
 1. Retrieve haplotype data for consecutive segments starting at variant position 21,000 from the start of Chromosome 3. Note: we have to use a larger variant window (2,000 sites) because the NA1,NA2 and NA3 populations have lower SNP density in this region. 
@@ -45,4 +45,4 @@ python PlotTanglegramsNew.py MCCT/
 5. This produced the following tanglegram:
 ![LD_tanglegram-test.png](/data/LD_tanglegram-test.png)
 
-### Note how the hi-speed regions fail to resolve the NA1, NA2, NA3, _F. gerlachii_ groupings and, furthermore, show extensive haplotype sharing between all groups. The NA1 group shows a number of splits within the "lo-speed" tanglegram because it is an admixed population, whose donor lineages show variable distance from NA2 and NA3. Otherise, NA1, NA2 and NA3 group members consiustently cluster together.
+### Note how the hi-diversity regions fail to resolve the NA1, NA2, NA3, _F. gerlachii_ groupings and, furthermore, show extensive haplotype sharing between all groups. The NA1 group shows a number of splits across the "lo-diversity" tanglegram because it is an admixed population, whose donor lineages are at varying distances from NA2 and NA3. Otherise, NA1, NA2 and NA3 group members generally cluster together.
