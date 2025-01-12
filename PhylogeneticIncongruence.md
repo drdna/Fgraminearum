@@ -23,6 +23,16 @@ python PlotTanglegramsNew.py MCCT/
 6. This produced the following tanglegram:
 ![HD_tanglegram-test.png](/data/HD_tanglegram-test.png)
 
+7. Next, I built tanglegrams spanning the Hi-speed region at the end of chromosome 3:
+![tanglegram-test-1-20.png](/data/tanglegram-test-1-20.png)
+![tanglegram-test-21-40.png](/data/tanglegram-test-21-40.png)
+![tanglegram-test-41-60.png](/data/tanglegram-test-41-60.png)
+![tanglegram-test-61-80.png](/data/tanglegram-test-61-80.png)
+![tanglegram-test-81-100.png](/data/tanglegram-test-81-100.png)
+
+
+
+
 ### The first tree is the reference tree which is used to show the consensus grouping for _F. gerlachii_ NA1, NA2 and NA3. Note the extensive and cross-population haplotype sharing between _F. gerlachii_, NA1, NA2 and NA3 as indicated by trees 2 through 20.
 
 ## Lo-speed region:
