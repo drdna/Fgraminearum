@@ -21,7 +21,7 @@ mv RAxML_bestree.FgramChr3_27000-32000 MCCT/MCCT0.tre
 python PlotTanglegramsNew.py MCCT/
 ```
 6. This produced the following tanglegram:
-![HS-tanglegram-test.png](/data/HS-tanglegram-test.png)
+![HD-tanglegram-test.png](/data/HD-tanglegram-test.png)
 
 #### The first tree is the reference tree which is used to show the consensus grouping for _F. gerlachii_ NA1, NA2 and NA3. Note the extensive and cross-population haplotype sharing between _F. gerlachii_, NA1, NA2 and NA3 as indicated by trees 2 through 20.
 
