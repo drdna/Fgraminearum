@@ -53,7 +53,7 @@ python PlotTanglegramsNew.py MCCT/
 ![tanglegram-test-1-16.png](/data/tanglegram-test-1-16.png)
 ![tanglegram-test-17-32.png](/data/tanglegram-test-17-32.png)
 
-#### Note how the hi-diversity regions fail to resolve the NA1, NA2, NA3, _F. gerlachii_ groupings and, furthermore, show extensive haplotype sharing between all groups. The NA1 group shows a number of splits across the "lo-diversity" tanglegram because it is an admixed population, whose donor lineages are at varying distances from NA2 and NA3. Otherise, NA1, NA2 and NA3 group members generally cluster together.
+#### Note how the hi-diversity regions fail to resolve the NA1, NA2, NA3, _F. gerlachii_ groupings and, furthermore, show extensive haplotype sharing between all groups. Conversely, the lo-speed regions exhibit good phyloegentic congruence. In particular, NA3 is consistently closest to _F gerlachii_ and shows no phylogenetic conflict with NA1 or NA2. The NA1 group shows a number of splits across the "lo-diversity" tanglegram because it is an admixed population, whose donor lineages are at varying distances from NA2 and NA3. Otherise, NA1, NA2 and NA3 group members generally cluster together.
 
 Next, I built a tanglegram for one of the lo-speed regions on chromosome 1:
 ![tanglegram-test-1-24.png](/data/tanglegram-test-1-24.png)
