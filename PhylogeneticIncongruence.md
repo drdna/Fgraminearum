@@ -36,7 +36,7 @@ for f in $(seq 21000 2000 61000); do g=$(($f+2000)); /Applications/standard-RAxM
 ```
 3. Modify tree filenames for importation into PlotTanglegrams.py script:
 ```bash
-a=0; for f in $(seq 21000 2000 5000); do g=$(($f+2000)); a=$((a+=1)); cp RAxML_bestTree.FgramChr3_${f}-${g} MCCT/MCCT${a}.tre; done
+a=0; for f in $(seq 21000 2000 61000); do g=$(($f+2000)); a=$((a+=1)); cp RAxML_bestTree.FgramChr3_${f}-${g} MCCT/MCCT${a}.tre; done
 ```
 4. Plot Tanglegram:
 ```bash
