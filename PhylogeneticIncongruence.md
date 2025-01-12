@@ -58,3 +58,4 @@ python PlotTanglegramsNew.py MCCT/
 Next, I built a tanglegram for one of the lo-speed regions on chromosome 1:
 ![tanglegram-test-1-24.png](/data/tanglegram-test-1-24.png)
 
+#### This also pointed to the existence of two discrete haplotypes at several loci within the NA1 population.
