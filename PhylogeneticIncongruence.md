@@ -20,9 +20,8 @@ mv RAxML_bestree.FgramChr3_27000-32000 MCCT/MCCT0.tre
 ```bash
 python PlotTanglegramsNew.py MCCT/
 ```
-6. This produced the following tanglegrams:
-![tanglegram-test-1-16.png](/data/tanglegram-test-1-16.png)
-![tanglegram-test-17-32.png](/data/tanglegram-test-17-32.png)
+6. This produced the following tanglegram:
+![HS-tanglegram-test.png](/data/HS-tanglegram-test.png)
 
 #### The first tree is the reference tree which is used to show the consensus grouping for _F. gerlachii_ NA1, NA2 and NA3. Note the extensive and cross-population haplotype sharing between _F. gerlachii_, NA1, NA2 and NA3 as indicated by trees 2 through 20.
 
@@ -50,8 +49,9 @@ a=0; for f in $(seq 21000 2000 61000); do g=$(($f+2000)); a=$((a+=1)); cp RAxML_
 ```bash
 python PlotTanglegramsNew.py MCCT/
 ```
-5. This produced the following tanglegram:
-![LD_tanglegram-test.png](/data/LD_tanglegram-test.png)
+5. This produced the following tanglegrams:
+![tanglegram-test-1-16.png](/data/tanglegram-test-1-16.png)
+![tanglegram-test-17-32.png](/data/tanglegram-test-17-32.png)
 
 #### Note how the hi-diversity regions fail to resolve the NA1, NA2, NA3, _F. gerlachii_ groupings and, furthermore, show extensive haplotype sharing between all groups. The NA1 group shows a number of splits across the "lo-diversity" tanglegram because it is an admixed population, whose donor lineages are at varying distances from NA2 and NA3. Otherise, NA1, NA2 and NA3 group members generally cluster together.
 
