@@ -4,7 +4,7 @@
 Generate_ARGsites.pl FgramARGstrainsPlus.txt FgWardPlusHaplotypes.complete.txt 3 | awk '$1 ~ /NAMES/ || $1 < 1000000' > FgramARGchr3_1-1000000.txt
 ```
 2. Manually edit line 2 in the resulting file to contain info on the region analyzed: REGION  Chr3 145118 999584 (tab-delimited)
-3. Run ARGweaver on MCC using the [ARGweaver.sh](/scripts/ARGweaver.sh) script:
+3. Run ARGweaver on MCC using the [ARGweaver.sh](/scripts/ARGweaver.sh) script (ARGweaver.sh <infile> <mutation> <recombination> <range>:
 ```bash
 sbatch ARGweaver.sh FgramARGchr3_1-1000000.txt 2e-9 1e-11 1-1000000
 ```
