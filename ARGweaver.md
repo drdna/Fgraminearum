@@ -28,4 +28,4 @@ python3 PlotTanglegrams.py FgramARGchr3_1-1000000.txt_2e-9_1e-11_145118-999584/
 python SMC2ARG.py FgramARGchr3_1-1000000.txt_2e-9_1e-11_145118-999584/FgramARGchr3_1-1000000.txt_2e-9_1e-11_145118-999584.99.smc
 ```
 8. Plot recombination dates as a function of chromosome position (RecombinationAge.R):
-![RecombinationAge.pdf](/data/RecombinationAge.pdf)
+![RecombinationAge.png](/data/RecombinationAge.png)
