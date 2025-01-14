@@ -18,7 +18,14 @@ for f in `ls *smc.gz`; do perl SMCnames.pl $f; done
 ```
 6. Generate tanglegrams using [PlotTanglegrams.py](/scripts/PlotTanglegrams.py) script:
 ```bash
-python3 PlotTanglegrams.py FgramARGchr3_1-1000000.txt_2e-9_1e-11_145118-999584
+python3 PlotTanglegrams.py FgramARGchr3_1-1000000.txt_2e-9_1e-11_145118-999584/
 ```
 
 ![tanglegram-test.png](/data/tanglegram-test.png)
+
+7. Build an Ancestral Recombination Graph
+```bash
+python SMC2ARG.py FgramARGchr3_1-1000000.txt_2e-9_1e-11_145118-999584/FgramARGchr3_1-1000000.txt_2e-9_1e-11_145118-999584.99.smc
+```
+8. Plot recombination dates as a function of chromosome position (RecombinationAge.R):
+![RecombinationAge.pdf](/data/RecombinationAge.pdf)
