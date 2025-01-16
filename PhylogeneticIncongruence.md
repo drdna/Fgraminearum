@@ -32,6 +32,8 @@ python PlotTanglegramsNew.py MCCT/
 ![tanglegram-test-61-80.png](/data/tanglegram-test-61-80.png)
 ![tanglegram-test-81-100.png](/data/tanglegram-test-81-100.png)
 
+#### Again, note the poor phylogenetic congruence and the failure of _F. gerlachii_, NA1, NA2 and NA3 to form reliable groupings.
+
 ## Lo-speed regions:
 1. Retrieve haplotype data for consecutive segments starting at variant position 21,000 from the start of Chromosome 3. Note: we have to use a larger variant window (2,500 sites) because the NA1,NA2 and NA3 populations have lower SNP density in this region. 
 ```bash
@@ -53,7 +55,7 @@ python PlotTanglegramsNew.py MCCT/
 ![tanglegram-test-1-16.png](/data/tanglegram-test-1-16.png)
 ![tanglegram-test-17-32.png](/data/tanglegram-test-17-32.png)
 
-#### Note how the hi-diversity regions fail to resolve the NA1, NA2, NA3, _F. gerlachii_ groupings and, furthermore, show extensive haplotype sharing between all groups. Conversely, the lo-speed regions exhibit good phyloegentic congruence. In particular, NA3 is consistently closest to _F gerlachii_ and shows no phylogenetic conflict with NA1 or NA2. The NA1 group shows a number of splits across the "lo-diversity" tanglegram because it is an admixed population, whose donor lineages are at varying distances from NA2 and NA3. Otherise, NA1, NA2 and NA3 group members generally cluster together.
+#### Note how the hi-diversity regions fail to resolve the NA1, NA2, NA3, _F. gerlachii_ groupings and, furthermore, show extensive haplotype sharing between all groups. Conversely, the lo-speed regions exhibit good phylogenetic congruence. In particular, NA3 is consistently closest to _F gerlachii_ and shows no phylogenetic conflict with NA1 or NA2. The NA1 group shows a number of splits across the "lo-diversity" tanglegram because it is an admixed population, whose donor lineages are at varying distances from NA2 and NA3. Otherise, NA1, NA2 and NA3 group members generally cluster together, with the rare exception of recombinant individuals (n=4).
 
 Next, I built a tanglegram for one of the lo-speed regions on chromosome 1:
 ![tanglegram-test-1-24.png](/data/tanglegram-test-1-24.png)
