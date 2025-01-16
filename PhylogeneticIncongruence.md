@@ -33,17 +33,17 @@ python PlotTanglegramsNew.py MCCT/
 ![tanglegram-test-81-100.png](/data/tanglegram-test-81-100.png)
 
 ## Lo-speed regions:
-1. Retrieve haplotype data for consecutive segments starting at variant position 21,000 from the start of Chromosome 3. Note: we have to use a larger variant window (2,000 sites) because the NA1,NA2 and NA3 populations have lower SNP density in this region. 
+1. Retrieve haplotype data for consecutive segments starting at variant position 21,000 from the start of Chromosome 3. Note: we have to use a larger variant window (2,500 sites) because the NA1,NA2 and NA3 populations have lower SNP density in this region. 
 ```bash
-for f in $(seq 21000 2000 61000); do g=$(($f+2000)); awk -v var=$f '$3 == "sequence3" {print ">" $2 "_" $1 "\n" substr($4, var, 2000)}' FgWardPlusHaplotypes.complete.txt | grep -f NA1NA2NA3strains.txt -A 1 | grep -v ^- > FgramChr3_${f}-${g}.fasta; done
+for f in $(seq 21000 2500 61000); do g=$(($f+2500)); awk -v var=$f '$3 == "sequence3" {print ">" $2 "_" $1 "\n" substr($4, var, 2500)}' FgWardPlusHaplotypes.complete.txt | grep -f NA1NA2NA3strains.txt -A 1 | grep -v ^- > FgramChr3_${f}-${g}.fasta; done
 ```
 2. Build Trees for the each of the selected regions:
 ```bash
-for f in $(seq 21000 2000 61000); do g=$(($f+2000)); /Applications/standard-RAxML-master/raxmlHPC-SSE3 -m BINGAMMA -n FgramChr3_${f}-${g} -s FgramChr3_${f}-${g}.fasta -o Fger_38380,Fger_36905 -p 1234 -f a -x 4321 -# 100
+for f in $(seq 21000 2500 61000); do g=$(($f+2500)); /Applications/standard-RAxML-master/raxmlHPC-SSE3 -m BINGAMMA -n FgramChr3_${f}-${g} -s FgramChr3_${f}-${g}.fasta -o Fger_38380,Fger_36905 -p 1234 -f a -x 4321 -# 100
 ```
 3. Modify tree filenames for importation into PlotTanglegrams.py script:
 ```bash
-a=0; for f in $(seq 21000 2000 61000); do g=$(($f+2000)); a=$((a+=1)); cp RAxML_bestTree.FgramChr3_${f}-${g} MCCT/MCCT${a}.tre; done
+a=0; for f in $(seq 21000 2500 61000); do g=$(($f+2500)); a=$((a+=1)); cp RAxML_bestTree.FgramChr3_${f}-${g} MCCT/MCCT${a}.tre; done
 ```
 4. Plot Tanglegram:
 ```bash
