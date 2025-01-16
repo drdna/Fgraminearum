@@ -17,6 +17,6 @@ perl ChromoPaint_to_R_compressed.pl FgWardPlusChr3all_out.copyprobsperlocus.out.
 mkdir FgramCopyProbs
 mv *copyprobsperlocus.out.gz FgramCopyProbs
 ```
-6. Plot foreign introgressions using the [ForeignIntrogressions.R](/scripts/ForeignIntrogressions.R) script:
+6. Plot foreign introgressions using the [ForeignIntrogressions.R](/scripts/ForeignIntrogressions.R) script (Please be patient, image is large and takes a long time to load):
 
 ![FgramCPplotsOrig.png](/data/FgramCPplotsOrig.png)
