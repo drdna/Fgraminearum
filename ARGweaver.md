@@ -29,10 +29,12 @@ python3 PlotTanglegrams.py FgramARGchr3_1-1000000.txt_2e-9_1e-11_145118-999584/
 python SMC2ARG.py FgramARGchr3_1-1000000.txt_2e-9_1e-11_145118-999584/FgramARGchr3_1-1000000.txt_2e-9_1e-11_145118-999584.99.smc
 ```
 8. Plot recombination dates as a function of chromosome position ([RecombinationAge.R](/scripts/RecombinationAge.R)):
+9. 
 ![RecombinationAge.png](/data/RecombinationAge.png)
 
 Note that the last six trees are in the lo-diversity region of the chromosome.
 
 9. Extend the ARGs further into the lo-diversity region (up to position 3,000,000):
+10. 
 ![RecombinationAge2.png](/data/RecombinationAge2.png)
 
