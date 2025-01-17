@@ -37,6 +37,12 @@ python SMC2ARG.py FgramARGchr3_1-1000000.txt_2e-9_1e-11_145118-999584/FgramARGch
 Note: the last six trees are in the lo-diversity region of the chromosome.
 
 9. Extend the ARGs further into the lo-diversity region (up to position 3,000,000):
+
+This produced the following tanglegram:
+
+![LD_tanglegram-test2.png](/data/LD_tanglegram-test2.png)
+
+and the following distribution of recombination dates:
  
 ![RecombinationAge2.png](/data/RecombinationAge2.png)
 
