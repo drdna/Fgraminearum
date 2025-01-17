@@ -24,6 +24,8 @@ python3 PlotTanglegrams.py FgramARGchr3_1-1000000.txt_2e-9_1e-11_145118-999584/
 
 ![tanglegram-test.png](/data/tanglegram-test.png)
 
+Note: the last six trees are in the lo-diversity region of the chromosome.
+
 7. Build an Ancestral Recombination Graph
 ```bash
 python SMC2ARG.py FgramARGchr3_1-1000000.txt_2e-9_1e-11_145118-999584/FgramARGchr3_1-1000000.txt_2e-9_1e-11_145118-999584.99.smc
@@ -32,7 +34,7 @@ python SMC2ARG.py FgramARGchr3_1-1000000.txt_2e-9_1e-11_145118-999584/FgramARGch
 
 ![RecombinationAge.png](/data/RecombinationAge.png)
 
-Note that the last six trees are in the lo-diversity region of the chromosome.
+Note: the last six trees are in the lo-diversity region of the chromosome.
 
 9. Extend the ARGs further into the lo-diversity region (up to position 3,000,000):
  
