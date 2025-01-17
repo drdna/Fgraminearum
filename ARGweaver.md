@@ -35,3 +35,4 @@ Note that the last six trees are in the lo-diversity region of the chromosome.
 9. Extend the ARGs further into the lo-diversity region (up to position 3,000,000):
 
 ![RecombinationAge2.pdf](/data/RecombinationAge2.pdf)
+
