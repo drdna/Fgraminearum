@@ -38,11 +38,11 @@ Note: the last six trees are in the lo-diversity region of the chromosome.
 
 9. Extend the ARGs further into the lo-diversity region (up to position 3,000,000):
 
-This produced the following tanglegram, which reveals a hi-diversity/hi-recombination region spanning positions 1,700,000 to 1,850,000: 
+The portion from 1,000,000 to 2,000,000 produced the following tanglegram, which reveals a hi-diversity/hi-recombination region spanning positions 1,700,000 to 1,850,000: 
 
 ![LD_tanglegram-test2.png](/data/LD_tanglegram-test2.png)
 
-and the following distribution of recombination dates:
+and the entire block (1,000,000 to 3,000,000) produced the following distribution of recombination dates:
  
 ![RecombinationAge2.png](/data/RecombinationAge2.png)
 
