@@ -32,7 +32,7 @@ python SMC2ARG.py FgramARGchr3_1-1000000.txt_2e-9_1e-11_145118-999584/FgramARGch
 ![RecombinationAge.png](/data/RecombinationAge.png)
 
 Note that the last six trees are in the lo-diversity region of the chromosome.
-9. Extend the ARGs further into the lo-diversity region (up to position 3,000,000):
 
+9. Extend the ARGs further into the lo-diversity region (up to position 3,000,000):
 ![RecombinationAge2.pdf](/data/RecombinationAge2.pdf)
 
