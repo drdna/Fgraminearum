@@ -16,7 +16,7 @@ python3 ARGweaver.py FgramARGchr3_1-1000000.txt_2e-9_1e-11_145118-999584
 ```bash
 for f in `ls *smc.gz`; do perl SMCnames.pl $f; done
 ```
-6. Generate tanglegrams using [PlotTanglegrams.py](/scripts/PlotTanglegrams.py) script:
+6. Generate tanglegrams using [PlotTanglegrams_v02.py](/scripts/PlotTanglegrams_v02.py) script:
 ```bash
 python3 PlotTanglegrams.py FgramARGchr3_1-1000000.txt_2e-9_1e-11_145118-999584/
 ```
