@@ -32,7 +32,7 @@ python PlotTanglegramsNew.py MCCT/
 ![tanglegram-test-61-80.png](/data/tanglegram-test-61-80.png)
 ![tanglegram-test-81-100.png](/data/tanglegram-test-81-100.png)
 
-#### Again, note the poor phylogenetic congruence and the failure of _F. gerlachii_, NA1, NA2 and NA3 to form reliable groupings.
+#### Again, note the poor phylogenetic congruence and the failure of _F. gerlachii_, NA1, NA2 and NA3 to form reliable groupings. Note also there are very few regions where the consensus phylogenetic relationships exhibited by the lo-speed regions are recovered.
 
 ## Lo-speed regions:
 1. Retrieve haplotype data for consecutive segments starting at variant position 21,000 from the start of Chromosome 3. Note: we have to use a larger variant window (2,500 sites) because the NA1,NA2 and NA3 populations have lower SNP density in this region. 
