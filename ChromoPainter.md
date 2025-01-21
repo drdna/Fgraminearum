@@ -1,6 +1,6 @@
 # ChromoPainting of foreign DNA introgressions
 Perform maximum likelihood-based analysis of haplotypes to infer chromosome ancestry using ChromoPainter. Note: it is important to disable self-copying to allow detection of foreign introgressions in populations founded by admixture.
-1. Use GenerateCP.pl script to generate input files from FgWardPlusHaplotypes.complete.txt file:
+1. Use [GenerateCP.pl](/scripts/GenerateCP.pl) script to generate input files from FgWardPlusHaplotypes.complete.txt file:
 ```bash
 perl GenerateCP.pl FgWardPlusHaplotypes.complete.txt sequence3 FgWardPlusChr3.cp
 ```
