@@ -1,6 +1,6 @@
 # Building Ancestral Recombination Graphs (ARGs) for _Fusarium graminearum_
 Assess recombinational history (# events and timing) using ARGweaver.
-1. Generate ARGweaver sites file using [Generate_ARGsites.pl](/scripts/Generate_ARG.pl) script. We only grabbed data for the first 1 Mb with no data compression.
+1. Generate ARGweaver sites file using [Generate_ARGsites.pl](/scripts/Generate_ARGsites.pl) script. We only grabbed data for the first 1 Mb with no data compression.
 ```bash
 Generate_ARGsites.pl FgramARGstrainsPlus.txt FgWardPlusHaplotypes.complete.txt 3 | awk '$1 ~ /NAMES/ || $1 < 1000000' > FgramARGchr3_1-1000000.txt
 ```
