@@ -30,7 +30,7 @@ Note: the last six trees are in the lo-diversity region of the chromosome.
 ```bash
 arg-layout FgramARGchr3_1-1000000.txt_2e-9_1e-11_145118-999584/FgramARGchr3_1-1000000.txt_2e-9_1e-11_145118-999584.199.layout FgramARGchr3_1-1000000.txt_2e-9_1e-11_145118-999584/FgramARGchr3_1-1000000.txt_2e-9_1e-11_145118-999584.199.smc
 ```
-8. Load layout into [PlotLeafTraces.R](/script/PlotLeafTrace.R) script:
+8. Load layout into [PlotLeafTrace.R](/script/PlotLeafTrace.R) script:
 
 ![FgramARGchr3LeafTraces.png](/data/FgramARGchr3LeafTraces.png)
 
