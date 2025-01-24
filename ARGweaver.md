@@ -26,17 +26,25 @@ python3 PlotTanglegrams.py FgramARGchr3_1-1000000.txt_2e-9_1e-11_145118-999584/
 
 Note: the last six trees are in the lo-diversity region of the chromosome.
 
-7. Build an Ancestral Recombination Graph
+7. Plot leaf traces
+```bash
+arg-layout FgramARGchr3_1-1000000.txt_2e-9_1e-11_145118-999584/FgramARGchr3_1-1000000.txt_2e-9_1e-11_145118-999584.199.layout FgramARGchr3_1-1000000.txt_2e-9_1e-11_145118-999584/FgramARGchr3_1-1000000.txt_2e-9_1e-11_145118-999584.199.smc
+```
+8. Load layout into [PlotLeafTraces.R](/script/PlotLeafTraces.R) script:
+
+1{FgramARGchr3LeafTraces.png](/data/FgramARGchr3LeafTraces.png)
+
+9. Build an Ancestral Recombination Graph
 ```bash
 python SMC2ARG.py FgramARGchr3_1-1000000.txt_2e-9_1e-11_145118-999584/FgramARGchr3_1-1000000.txt_2e-9_1e-11_145118-999584.99.smc
 ```
-8. Plot recombination dates as a function of chromosome position ([RecombinationAge.R](/scripts/RecombinationAge.R)):
+10. Plot recombination dates as a function of chromosome position ([RecombinationAge.R](/scripts/RecombinationAge.R)):
 
 ![RecombinationAge.png](/data/RecombinationAge.png)
 
 Note: the last six trees are in the lo-diversity region of the chromosome.
 
-9. Extend the ARGs further into the lo-diversity region (up to position 3,000,000):
+11. Extend the ARGs further into the lo-diversity region (up to position 3,000,000):
 
 The portion from 1,000,000 to 2,000,000 produced the following tanglegram, which reveals a hi-diversity/hi-recombination region spanning positions 1,700,000 to 1,850,000: 
 
