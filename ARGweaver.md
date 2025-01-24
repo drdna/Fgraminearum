@@ -32,7 +32,7 @@ arg-layout FgramARGchr3_1-1000000.txt_2e-9_1e-11_145118-999584/FgramARGchr3_1-10
 ```
 8. Load layout into [PlotLeafTraces.R](/script/PlotLeafTraces.R) script:
 
-!{FgramARGchr3LeafTraces.png](/data/FgramARGchr3LeafTraces.png)
+![FgramARGchr3LeafTraces.png](/data/FgramARGchr3LeafTraces.png)
 
 9. Build an Ancestral Recombination Graph
 ```bash
