@@ -2,7 +2,7 @@
 Code and data for Population Genomic Studies of _Fusarium graminearum_
 
 ## Determine Allele Frequencies of SNPs within the NA1, NA2 and NA3 subgroups of the _F. graminearum_ population
-1. Use [FgramAlleleFreqs.pl](/scripts/FgramAlleleFreqs.pl) script to genetrate a table of allele frequency counts from the FgramHaplotypes.complete.txt file:
+1. Use [FgramAlleleFreqs.pl](/scripts/FgramAlleleFreqs.pl) script to generate a table of allele frequency counts from the FgramHaplotypes.complete.txt file:
 ```bash
 perl FgramAlleleFreqs.pl FgramHaplotypes.complete.txt > FgramAlleleFreqs.txt
 ```
@@ -36,6 +36,27 @@ Resulting file can be accessed here: [Picked_primers.txt](/data/Picked_primers.t
 Use [PlotPrimerSites.R](/scripts/PlotPrimerSites.R) script to plot primer sites on chromosomes.
 
 ![MonsterPlexTargets.png](/data/MonsterPlexTargets.png)
+
+## Check specificity of primers
+Blast primer sequences against PH1 genome and filter out ones having multiple alignments at their 3' ends.
+1. Create fasta file:
+```bash
+awk '{print ">" $1 "_" $2 "F" "\n" $3 "\n" ">" $1 "_" $2 "R" "\n" $4}' Picked_primers.txt  > Picked_primers.fasta
+```
+2. Blast primers against PH1 genome and retain alignemnts with more than 17 nucleotides aligning at the 3' end of each primer
+```
+blastn -query Picked_primers.fasta -subject PH1.fasta -outfmt '6 qseqid sseqid qlen pident length mismatch gapopen qstart qend sstart send evalue score' -task blastn-short | awk '$5 >= 17 && $9 == $3' > Picked_primers.PH1.BLAST
+```
+3. Identify primers that have unique alignments:
+```
+perl Unique_primers.pl Picked_primers.PH1.BLAST > Unique_primers.txt
+```
+4. List primers in tabular format for uploading into Excel:
+```
+grep -f Unique_primers.txt Picked_primers.fasta -A 1 | grep -v ^- | awk 'BEGIN {record=0}      /^>/ {if (record % 6 == 1 || record % 6 == 2) print name "\t" sequence; record++; name = substr($0, 2); sequence = ""}
+       !/^>/ {sequence = sequence $0}
+       END {if (record % 6 == 1 || record % 6 == 2) print name "\t" sequence}' > Selected_primers.txt
+```
 
 ## Develop MonsterPlex Primers for current multi-locus genotyping markers:
 1. Blast existing markers against the NA1, NA2 and N3 population members:
