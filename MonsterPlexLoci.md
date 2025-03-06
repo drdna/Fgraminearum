@@ -37,7 +37,7 @@ Use [PlotPrimerSites.R](/scripts/PlotPrimerSites.R) script to plot primer sites 
 
 ![MonsterPlexTargets.png](/data/MonsterPlexTargets.png)
 
-## Check specificity of primers
+## Check primer specificity
 Blast primer sequences against PH1 genome and filter out ones having multiple alignments at their 3' ends.
 1. Create fasta file:
 ```bash
@@ -51,7 +51,7 @@ blastn -query Picked_primers.fasta -subject PH1.fasta -outfmt '6 qseqid sseqid q
 ```
 perl Unique_primers.pl Picked_primers.PH1.BLAST > Unique_primers.txt
 ```
-4. List primers in tabular format for uploading into Excel:
+4. Extract primer sequences from fasta file and print in tabular format for uploading into Excel:
 ```
 grep -f Unique_primers.txt Picked_primers.fasta -A 1 | grep -v ^- | awk 'BEGIN {record=0}      /^>/ {if (record % 6 == 1 || record % 6 == 2) print name "\t" sequence; record++; name = substr($0, 2); sequence = ""}
        !/^>/ {sequence = sequence $0}
