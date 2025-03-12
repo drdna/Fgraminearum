@@ -6,6 +6,8 @@ Code and data for Population Genomic Studies of _Fusarium graminearum_
 ```bash
 perl FgramAlleleFreqs.pl FgramHaplotypes.complete.txt > FgramAlleleFreqs.txt
 ```
+![FgramAlleleFreqs.png](/data/FgramAlleleFreqs.png)
+
 ## BLAST all F. gram genomes against the PH1 reference:
 ```bash
 mkdir FgramBLAST
@@ -16,6 +18,8 @@ for f in `ls *nh.fasta`; do blastn -query PH1ref.fasta -subject $f -evalue 1e-20
 ```bash
 perl PerfectAlignments.pl PH1Ref.fasta FgramNAstrains.txt NewFgramBLAST > FgramInvariant.txt
 ```
+![FgramInvariant.png](/data/FgramInvariant.png)
+
 ## Identify high frequency variants that are flanked by invariant priming sites
 Grab multiple 91 nt windows that flank each hi-freq SNP site (41 nt central region containing the variant and 25 nt on each end for potential primer annealing sits). Slide windows across the locus so that variant site is always >= 35 nt from window/start end.
 ```bash
