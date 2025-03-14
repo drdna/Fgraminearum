@@ -15,6 +15,7 @@ cd Fgram_unmasked
 for f in `ls *nh.fasta`; do blastn -query PH1ref.fasta -subject $f -evalue 1e-20 -max_target_seqs 20000 -outfmt '6 qseqid sseqid qstart qend sstart send btop' > ../FgramBLAST/PH1.${f/_*/}.BLAST; done
 ```
 ## Identify genomic regions that are invariant across all genomes in a given list of strains
+Iterate through BLAST alignments of PH1 searched against all other strains and iterate through btop strings to identify blocks with no variants.
 ```bash
 perl PerfectAlignments.pl PH1Ref.fasta FgramNAstrains.txt NewFgramBLAST > FgramInvariant.txt
 ```
