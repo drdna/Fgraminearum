@@ -30,9 +30,9 @@ Grab multiple 91 nt windows that flank each hi-freq SNP site (41 nt central regi
 ```bash
 perl SelectMonsterplexTargetLoci.pl FgramInvariant.txt FgramAlleleFreqs.txt ClusteredHiFreqSNPs.txt 50 > MPlex_target_candidates.txt
 ```
-## Use primer3 to pick primers (57 < Tm < 60; fragment size range 81-91 bp)
+## Use primer3 to pick primers (57 < Tm < 60; fragment size range 90-110 bp)
 ```bash
-awk '{print "SEQUENCE_ID=" $1 "\nSEQUENCE_TEMPLATE=" $2 "\nPRIMER_MIN_TM=57\nPRIMER_MAX_TM=60\nPRIMER_PRODUCT_SIZE=81-91\nPRIMER_NUM_RETURN=1\n="}' MPlex_target_candidates.txt > primer3_in.txt
+awk '{print "SEQUENCE_ID=" $1 "\nSEQUENCE_TEMPLATE=" $2 "\nPRIMER_MIN_TM=57\nPRIMER_MAX_TM=60\nPRIMER_PRODUCT_SIZE=90-110\nPRIMER_NUM_RETURN=1\n="}' MPlex_target_candidates.txt > primer3_in.txt
 primer3_core primer3_in.txt > primer3_primer_suggestions.txt
 ```
 ## Select primers based on the sequences most frequently picked by primer3
