@@ -21,8 +21,12 @@ perl PerfectAlignments.pl PH1Ref.fasta FgramNAstrains.txt NewFgramBLAST > FgramI
 ```
 ![FgramInvariant.png](/data/FgramInvariant.png)
 
+## Identify chromosome blocks that contain multiple SNPs (>=2) within a specified distance of one another (50 nt)
+```bash
+perl  ClusteredMonsterplexSNPsNewFormat.pl FgramAlleleFreqs.txt 41
+```
 ## Identify high frequency variants that are flanked by invariant priming sites
-Grab multiple 91 nt windows that flank each hi-freq SNP site (41 nt central region containing the variant and 25 nt on each end for potential primer annealing sits). Slide windows across the locus so that variant site is always >= 35 nt from window/start end.
+Grab multiple 91 nt windows that flank each hi-freq SNP site (41 nt central region containing the variants and 25 nt on each end for potential primer annealing sites). Slide windows across the locus so that variant site is always >= 35 nt from window/start end.
 ```bash
 perl SelectMonsterplexTargetLoci.pl FgramInvariant.txt FgramAlleleFreqs.txt ClusteredHiFreqSNPs.txt 50 > MPlex_target_candidates.txt
 ```
