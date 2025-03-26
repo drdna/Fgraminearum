@@ -21,51 +21,30 @@ perl PerfectAlignments.pl PH1Ref.fasta FgramNAstrains.txt NewFgramBLAST > FgramI
 ```
 ![FgramInvariant.png](/data/FgramInvariant.png)
 
-## Identify chromosome blocks that contain multiple SNPs (>=2) within a specified distance of one another (50 nt)
+## Identify chromosome blocks that contain multiple, high frequency SNPs (>=2) within a specified distance of one another (41 nt)
 ```bash
 perl  ClusteredMonsterplexSNPsNewFormat.pl FgramAlleleFreqs.txt 41
 ```
 ## Identify high frequency variants that are flanked by invariant priming sites
-Grab multiple 91 nt windows that flank each hi-freq SNP site (41 nt central region containing the variants and 25 nt on each end for potential primer annealing sites). Slide windows across the locus so that variant site is always >= 35 nt from window/start end.
+Grab multiple 100 nt windows that flank each hi-freq SNP site (44 nt central region containing the variants and 28 nt on each end for potential primer annealing sites). Produce Primer3 input file that requests primers with Tm of 54-50, product size range of 800-100 nt and aoids primers that extend into variable sites (positions 29-72).
 ```bash
 perl SelectMonsterplexTargetLoci.pl FgramInvariant.txt FgramAlleleFreqs.txt ClusteredHiFreqSNPs.txt 50 > MPlex_target_candidates.txt
 ```
 ## Use primer3 to pick primers (57 < Tm < 60; fragment size range 90-110 bp)
 ```bash
-awk '{print "SEQUENCE_ID=" $1 "\nSEQUENCE_TEMPLATE=" $2 "\nPRIMER_MIN_TM=57\nPRIMER_MAX_TM=60\nPRIMER_PRODUCT_SIZE=90-110\nPRIMER_NUM_RETURN=1\n="}' MPlex_target_candidates.txt > primer3_in.txt
-primer3_core primer3_in.txt > primer3_primer_suggestions.txt
+primer3_core primer3_in.txt > primer3SuggestedPrimers.txt
 ```
-## Select primers based on the sequences most frequently picked by primer3
+## Grab sequences of primers suggested by primer3 and the sequences of the corresponding loci that would be amplified from PH1 reference genome
 ```bash
-perl PickMPlexPrimers.pl primer3_primer_suggestions.txt > Picked_primers.txt
+perl PickMPlexPrimers.pl primer3_primer_suggestions.txt Fgram_primer_set1
 ```
-Resulting file can be accessed here: [Picked_primers.txt](/data/Picked_primers.txt)
+Resulting primer sequence file can be accessed here: [Fgram_primer_set1.csv](/data/Fgram_primer_set1.csv)
+Amplified locus sequences can be accessed here: [Fgram_primer_set1.fasta](/data/Fgram_primer_set1.fasta)
 
 ## Plot primer distribution
 Use [PlotPrimerSites.R](/scripts/PlotPrimerSites.R) script to plot primer sites on chromosomes.
 
 ![MonsterPlexTargets.png](/data/MonsterPlexTargets.png)
-
-## Check primer specificity
-Blast primer sequences against PH1 genome and filter out ones having multiple alignments at their 3' ends.
-1. Create fasta file:
-```bash
-awk '{print ">" $1 "_" $2 "F" "\n" $3 "\n" ">" $1 "_" $2 "R" "\n" $4}' Picked_primers.txt  > Picked_primers.fasta
-```
-2. Blast primers against PH1 genome and retain alignemnts with more than 17 nucleotides aligning at the 3' end of each primer
-```
-blastn -query Picked_primers.fasta -subject PH1.fasta -outfmt '6 qseqid sseqid qlen pident length mismatch gapopen qstart qend sstart send evalue score' -task blastn-short | awk '$5 >= 17 && $9 == $3' > Picked_primers.PH1.BLAST
-```
-3. Identify primers that have unique alignments:
-```
-perl Unique_primers.pl Picked_primers.PH1.BLAST > Unique_primers.txt
-```
-4. Extract primer sequences from fasta file and print in tabular format for uploading into Excel:
-```
-grep -f Unique_primers.txt Picked_primers.fasta -A 1 | grep -v ^- | awk 'BEGIN {record=0}      /^>/ {if (record % 6 == 1 || record % 6 == 2) print name "\t" sequence; record++; name = substr($0, 2); sequence = ""}
-       !/^>/ {sequence = sequence $0}
-       END {if (record % 6 == 1 || record % 6 == 2) print name "\t" sequence}' > Selected_primers.txt
-```
 
 ## Develop MonsterPlex Primers for current multi-locus genotyping markers:
 1. Blast existing markers against the NA1, NA2 and N3 population members:
