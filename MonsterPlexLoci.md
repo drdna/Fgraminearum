@@ -6,15 +6,20 @@ Code and data for Population Genomic Studies of _Fusarium graminearum_
 ```bash
 perl FgramAlleleFreqs.pl FgramHaplotypes.complete.txt > FgramAlleleFreqs.txt
 ```
-Output file [FgramAlleleFreqs.txt](/data/FgramAlleleFreqs.txt) has a format that looks like this: 
 
 ![FgramAlleleFreqs.png](/data/FgramAlleleFreqs.png)
+
+Figure 1. Format of [FgramAlleleFreqs.txt](/data/FgramAlleleFreqs.txt) output file. 
 
 ## Identify chromosome blocks that contain multiple, high frequency SNPs (>=2) within a specified distance of one another
 1. The [ClusteredMonsterplexSNPsNewFormat.pl](/scripts/ClusteredMonsterplexSNPsNewFormat.pl) script reads a list of high frequency alleles and identifies pairs that are within a specified distance of on another (here, 41 is used): 
 ```bash
 perl  ClusteredMonsterplexSNPsNewFormat.pl FgramAlleleFreqs.txt 41 > ClusteredHiFreqSNPs.txt
 ```
+![ClusteredHiFreqSNPs.png](/data/ClusteredHiFreqSNPs.png)
+
+Figure 2. Format of [ClusteredHiFreqSNPs.txt](/data/ClusteredHiFreqSNPs.txt) output file.
+
 ## Identify genomic regions that are invariant across all genomes in a given list of strains
 1. BLAST all strains against the reference:
 ```bash
@@ -28,11 +33,17 @@ perl PerfectAlignments.pl PH1Ref.fasta FgramNAstrains.txt NewFgramBLAST > FgramI
 ```
 ![FgramInvariant.png](/data/FgramInvariant.png)
 
+Figure 3. Format of [FgramInvariant.txt](/data/FgramInvariant.txt) output file. 
+
 ## Identify high frequency linked variants that are flanked by invariant priming sites
 1. Use the [SelectMonsterplexTargetLoci.pl](/scripts/SelectMonsterplexTargetLoci.pl) script to grab multiple 100 nt windows that flank each hi-freq SNP site (44 nt central region containing the variants and 28 nt on each end for potential primer annealing sites). Produce Primer3 input file that requests primers with Tm of 54-50, product size range of 800-100 nt and avoids primers that extend into variable sites (positions 29-72).
 ```bash
 perl SelectMonsterplexTargetLociV2.pl FgramInvariant.txt ClusteredHiFreqSNPs.txt <ref_genome.fasta> primer3_in.txt
 ```
+![primer3_in.png](/data/primer3_in.png)
+
+Figure 4. Format of [primer3_in.txt](/data/primer3_in.txt) output file. 
+
 ## Use primer3 to pick primers (57 < Tm < 60; fragment size range 90-110 bp)
 ```bash
 primer3_core primer3_in.txt > Primer3SuggestedPrimers.txt
