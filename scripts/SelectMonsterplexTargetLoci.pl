@@ -3,7 +3,7 @@
 #use warnings;
 use FetchGenomeOrig;
 
-die "Usage: SelectMonsterplexTargetLociV2.pl <non-polymorphic-alignStrings> <clustered-snp-sites> <ref-genome>\n" if @ARGV != 3;
+die "Usage: SelectMonsterplexTargetLoci.pl <non-polymorphic-alignStrings> <clustered-snp-sites> <ref-genome>\n" if @ARGV != 3;
 
 
 ($NPalignString, $clusteredFrequentSNPs, $RefGenome) = @ARGV;
