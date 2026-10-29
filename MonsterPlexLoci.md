@@ -7,7 +7,7 @@ Code and data for Population Genomic Studies of _Fusarium graminearum_
 perl FgramAlleleFreqs.pl FgramHaplotypes.complete.txt > FgramAlleleFreqs.txt
 ```
 ![FgramAlleleFreqs.png](/data/FgramAlleleFreqs.png)
-```
+
 ## Use [ClusteredMonsterplexSNPsNewFormat.pl](/scripts/ClusteredMonsterplexSNPsNewFormat.pl) script to identify chromosome blocks that contain multiple, high frequency SNPs (>=2) within a specified distance of one another (41 nt)
 ```bash
 perl  ClusteredMonsterplexSNPsNewFormat.pl FgramAlleleFreqs.txt 41
