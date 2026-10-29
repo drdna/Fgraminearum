@@ -26,13 +26,13 @@ perl PerfectAlignments.pl PH1Ref.fasta FgramNAstrains.txt NewFgramBLAST > FgramI
 perl  ClusteredMonsterplexSNPsNewFormat.pl FgramAlleleFreqs.txt 41
 ```
 ## Identify high frequency variants that are flanked by invariant priming sites
-Grab multiple 100 nt windows that flank each hi-freq SNP site (44 nt central region containing the variants and 28 nt on each end for potential primer annealing sites). Produce Primer3 input file that requests primers with Tm of 54-50, product size range of 800-100 nt and aoids primers that extend into variable sites (positions 29-72).
+Grab multiple 100 nt windows that flank each hi-freq SNP site (44 nt central region containing the variants and 28 nt on each end for potential primer annealing sites). Produce Primer3 input file that requests primers with Tm of 54-50, product size range of 800-100 nt and avoids primers that extend into variable sites (positions 29-72).
 ```bash
 perl SelectMonsterplexTargetLoci.pl FgramInvariant.txt FgramAlleleFreqs.txt ClusteredHiFreqSNPs.txt 50 > MPlex_target_candidates.txt
 ```
 ## Use primer3 to pick primers (57 < Tm < 60; fragment size range 90-110 bp)
 ```bash
-primer3_core primer3_in.txt > primer3SuggestedPrimers.txt
+primer3_core primer3_in.txt > Primer3SuggestedPrimers.txt
 ```
 ## Grab sequences of primers suggested by primer3 and the sequences of the corresponding loci that would be amplified from PH1 reference genome
 ```bash
