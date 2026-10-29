@@ -6,7 +6,9 @@ Code and data for Population Genomic Studies of _Fusarium graminearum_
 ```bash
 perl FgramAlleleFreqs.pl FgramHaplotypes.complete.txt > FgramAlleleFreqs.txt
 ```
-Output file [FgramAlleleFreqs.txt](/data/FgramAlleleFreqs.txt) has a format that looks like this: ![FgramAlleleFreqs.png](/data/FgramAlleleFreqs.png)
+Output file [FgramAlleleFreqs.txt](/data/FgramAlleleFreqs.txt) has a format that looks like this: 
+
+![FgramAlleleFreqs.png](/data/FgramAlleleFreqs.png)
 
 ## Identify chromosome blocks that contain multiple, high frequency SNPs (>=2) within a specified distance of one another
 1. The [ClusteredMonsterplexSNPsNewFormat.pl](/scripts/ClusteredMonsterplexSNPsNewFormat.pl) script reads a list of high frequency alleles and identifies pairs that are within a specified distance of on another (here, 41 is used): 
@@ -29,7 +31,7 @@ perl PerfectAlignments.pl PH1Ref.fasta FgramNAstrains.txt NewFgramBLAST > FgramI
 ## Identify high frequency linked variants that are flanked by invariant priming sites
 1. Use the [SelectMonsterplexTargetLoci.pl](/scripts/SelectMonsterplexTargetLoci.pl) script to grab multiple 100 nt windows that flank each hi-freq SNP site (44 nt central region containing the variants and 28 nt on each end for potential primer annealing sites). Produce Primer3 input file that requests primers with Tm of 54-50, product size range of 800-100 nt and avoids primers that extend into variable sites (positions 29-72).
 ```bash
-perl SelectMonsterplexTargetLoci.pl FgramInvariant.txt FgramAlleleFreqs.txt ClusteredHiFreqSNPs.txt 50 > MPlex_target_candidates.txt
+perl SelectMonsterplexTargetLociV2.pl FgramInvariant.txt ClusteredHiFreqSNPs.txt <ref_genome.fasta> > MPlex_target_candidates.txt
 ```
 ## Use primer3 to pick primers (57 < Tm < 60; fragment size range 90-110 bp)
 ```bash
