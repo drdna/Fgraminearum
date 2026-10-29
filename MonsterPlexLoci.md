@@ -13,7 +13,7 @@ Output file [FgramAlleleFreqs.txt](/data/FgramAlleleFreqs.txt) has a format that
 ## Identify chromosome blocks that contain multiple, high frequency SNPs (>=2) within a specified distance of one another
 1. The [ClusteredMonsterplexSNPsNewFormat.pl](/scripts/ClusteredMonsterplexSNPsNewFormat.pl) script reads a list of high frequency alleles and identifies pairs that are within a specified distance of on another (here, 41 is used): 
 ```bash
-perl  ClusteredMonsterplexSNPsNewFormat.pl FgramAlleleFreqs.txt 41
+perl  ClusteredMonsterplexSNPsNewFormat.pl FgramAlleleFreqs.txt 41 > ClusteredHiFreqSNPs.txt
 ```
 ## Identify genomic regions that are invariant across all genomes in a given list of strains
 1. BLAST all strains against the reference:
