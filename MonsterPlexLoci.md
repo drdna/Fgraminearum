@@ -31,7 +31,7 @@ perl PerfectAlignments.pl PH1Ref.fasta FgramNAstrains.txt NewFgramBLAST > FgramI
 ## Identify high frequency linked variants that are flanked by invariant priming sites
 1. Use the [SelectMonsterplexTargetLoci.pl](/scripts/SelectMonsterplexTargetLoci.pl) script to grab multiple 100 nt windows that flank each hi-freq SNP site (44 nt central region containing the variants and 28 nt on each end for potential primer annealing sites). Produce Primer3 input file that requests primers with Tm of 54-50, product size range of 800-100 nt and avoids primers that extend into variable sites (positions 29-72).
 ```bash
-perl SelectMonsterplexTargetLociV2.pl FgramInvariant.txt ClusteredHiFreqSNPs.txt <ref_genome.fasta> > MPlex_target_candidates.txt
+perl SelectMonsterplexTargetLociV2.pl FgramInvariant.txt ClusteredHiFreqSNPs.txt <ref_genome.fasta> primer3_in.txt
 ```
 ## Use primer3 to pick primers (57 < Tm < 60; fragment size range 90-110 bp)
 ```bash
